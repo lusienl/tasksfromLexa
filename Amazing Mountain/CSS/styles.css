@@ -1,0 +1,335 @@
+/* font-family: 'Work Sans', sans-serif; */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-primary: #f70058;
+  --clr-dark: #0c0e36;
+  --clr-light: #fff;
+  --fw-normal: 400;
+  --fw-bold: 700;
+  --fw-black: 900;
+}
+
+body {
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.125rem;
+  color: var(--clr-dark);
+  line-height: 1.6;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  min-height: 80px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.cont-icon {
+  display: flex;
+  padding-left: 10%;
+  flex-grow: 1;
+}
+
+.header-wrapper {
+  display: none;
+}
+
+.nav-mobile {
+  display: none;
+}
+
+.header-icon {
+  max-width: 200px;
+}
+
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  margin-right: 5%;
+}
+
+.nav-desktop > .nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  gap: 50px;
+}
+
+.nav-desktop .nav__link {
+  text-decoration: none;
+  color: var(--clr-dark);
+  text-transform: uppercase;
+  font-weight: var(--fw-bold);
+}
+
+.nav__link:hover {
+  color: var(--clr-primary);
+  transition: 0.3s all ease-in-out;
+}
+
+.weather-cont {
+  display: flex;
+}
+
+.weather__icon {
+  width: 4.5rem;
+  padding: 10px;
+  background: var(--clr-primary);
+}
+
+.weather__text {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.weather__text span {
+  color: var(--clr-light);
+}
+
+h1 {
+  margin: 0;
+}
+.weather__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--clr-dark);
+  color: var(--clr-light);
+}
+
+.weather__text {
+  font-size: 12px;
+  letter-spacing: 0.075em;
+  font-weight: var(--fw-bold-);
+  padding: 5px 0;
+  margin: 0 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.first {
+  border-bottom: 2px solid white;
+  border-color: gray;
+}
+
+.main-content {
+  height: 100vh;
+  height: calc(100vh - 80px);
+  background-image: url(https://www.realisedesign.co.uk/wp-content/uploads/2022/02/sebastian-staines-xZIFEPtRsRI-unsplash-scaled.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.main-container {
+  padding-left: 10%;
+  padding-top: 12%;
+  max-width: 900px;
+}
+
+.main__title {
+  max-width: 550px;
+  font-weight: var(--fw-bold);
+  line-height: 1;
+  font-size: 48px;
+}
+
+.main__intro {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: var(--fw-bold);
+}
+
+.btn--primary {
+  background-color: var(--clr-primary);
+  color: var(--clr-light);
+  margin-left: 150px;
+  margin-right: 15px;
+}
+
+.btn--primary:hover {
+  background-color: var(--clr-dark);
+  transition: 0.3s all ease-in-out;
+}
+
+.btn--outline {
+  outline: 3px solid var(--clr-primary);
+  outline-offset: -3px;
+  color: var(--clr-primary);
+}
+
+.btn--outline:hover {
+  background-color: var(--clr-dark);
+  outline-color: var(--clr-dark);
+  color: var(--clr-light);
+  transition: 0.3s all ease-in-out;
+}
+
+/* nav mobile code must be display: none */
+
+/* media queries 
+Hide nav desktop and display nav mobile
+
+When the modifier is nav-mobile--visible --> transform: translate(0)
+by default transform: translate(-100%)
+Don't forget about transition: transform 0.3s
+*/
+
+@media (max-width: 431px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .cont-icon {
+    display: none;
+    justify-content: left;
+    padding: 0;
+  }
+
+  .fa-bars {
+    color: var(--clr-dark);
+    font-size: 1.5rem;
+    line-height: 0;
+  }
+
+  .header-icon {
+    max-width: 400px;
+    width: 13rem;
+  }
+
+  .nav-desktop > .nav__list {
+    display: none;
+  }
+
+  .weather-cont {
+    width: 100%;
+  }
+
+  .weather__icon {
+    width: 25%;
+  }
+
+  .weather__info {
+    width: 75%;
+  }
+
+  .weather__text {
+    display: flex;
+    font-size: 0.9rem;
+  }
+
+  .weather__text span {
+    margin-left: auto;
+    margin-right: 0.75rem;
+  }
+
+  .main-content {
+    height: 100vh;
+    height: calc(100vh - 80px);
+    background-image: url(https://www.realisedesign.co.uk/wp-content/uploads/2022/02/sebastian-staines-xZIFEPtRsRI-unsplash-scaled.jpg);
+    background-size: cover;
+    background-position: 5%;
+  }
+
+  .main-container {
+    padding: 40px 40px;
+  }
+
+  .main__title {
+    font-weight: var(--fw-bold);
+    line-height: 1;
+    font-size: 2.2rem;
+  }
+
+  .main__intro {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+
+  .btn {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.7rem 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: var(--fw-bold);
+  }
+
+  .btn--primary {
+    background-color: var(--clr-primary);
+    color: var(--clr-light);
+    margin-left: 40px;
+    margin-right: 15px;
+  }
+
+  .nav-mobile {
+    display: block;
+    background: rgba(255, 255, 255, 0.99);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: transform 0.3s;
+    transform: translate(-100%);
+  }
+
+  .nav-burger-list {
+    position: absolute;
+    top: 125px;
+    left: 40px;
+  }
+
+  .nav-burger-list-item {
+    list-style-type: none;
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+  }
+
+  .nav-burger-link {
+    text-decoration: none;
+    color: var(--clr-dark);
+  }
+
+  .nav-burger-link:hover {
+    color: var(--clr-primary);
+    transition: 0.3s all ease-in-out;
+  }
+
+  .fa-xmark {
+    position: absolute;
+    font-size: 2.3rem;
+    right: 20px;
+    top: 20px;
+  }
+
+  .nav-burger--visible {
+    transform: translate(0);
+  }
+}
